@@ -1,0 +1,554 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  font-size: 10px;
+  font-family: "Montserrat", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #555;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: inherit;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #bdbdbd;
+  border-radius: 20px;
+}
+
+@media (max-width: 500px) {
+  *::-webkit-scrollbar {
+    width: 3px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #e2e2e2;
+    border-radius: 20px;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 3000;
+  background-color: rgba(0, 0, 0, 0.741);
+}
+
+.backdrop-open {
+  display: block;
+}
+
+.backdrop-closed {
+  display: none;
+}
+
+.mobile-nav {
+  position: fixed;
+  height: 100%;
+  width: 50%;
+  top: 0;
+  right: 0;
+  z-index: 3000;
+  background-color: #fff;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+@media (max-width: 500px) {
+  .mobile-nav {
+    width: 70%;
+  }
+}
+
+.mobile-nav ul {
+  list-style: none;
+}
+
+.mobile-nav ul li {
+  display: block;
+  margin: 2rem 0.5rem;
+}
+
+.mobile-nav ul li a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.mobile-nav ul li a:hover {
+  color: #fa145e;
+}
+
+.mobile-nav ul li .active {
+  color: #fa145e;
+}
+
+.mobile-nav span {
+  font-size: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.open {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.close {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.Welcome-Section {
+  position: relative;
+  min-height: 70vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.Welcome-Section .Header {
+  height: 7rem;
+  background-color: rgba(255, 0, 0, 0);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.3rem 3rem;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.Welcome-Section .Header #white-logo {
+  display: none;
+}
+
+.Welcome-Section .Header .Brand {
+  height: 2.5rem;
+  width: auto;
+}
+
+.Welcome-Section .Header .Navigation {
+  margin-right: 7rem;
+  cursor: pointer;
+}
+
+.Welcome-Section .Header .Navigation ul {
+  list-style: none;
+}
+
+.Welcome-Section .Header .Navigation ul li {
+  display: inline-block;
+  margin: 0.1rem 2rem;
+}
+
+.Welcome-Section .Header .Navigation ul li a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.Welcome-Section .Header .Navigation ul li a:hover {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 1.5rem;
+}
+
+.Welcome-Section .Header .Navigation ul li .active {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 1.5rem;
+}
+
+.Welcome-Section .Header .Navigation div {
+  display: none;
+  height: 3px;
+  width: 30px;
+  margin: 0.6rem auto;
+  background-color: #fff;
+}
+
+@media (max-width: 1060px) {
+  .Welcome-Section .Header .Navigation ul {
+    display: none;
+  }
+  .Welcome-Section .Header .Navigation div {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 890px) {
+  .Welcome-Section .Header .Navigation {
+    margin-right: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .Welcome-Section .Header .Navigation {
+    margin-right: 1rem;
+  }
+}
+
+.Welcome-Section .Light {
+  background-color: white;
+  -webkit-box-shadow: 0px 1.2px 1.2px 1.2px #ebeaea;
+          box-shadow: 0px 1.2px 1.2px 1.2px #ebeaea;
+}
+
+.Welcome-Section .Light #white-logo {
+  display: block;
+}
+
+.Welcome-Section .Light #dark-logo {
+  display: none;
+}
+
+.Welcome-Section .Light .Navigation {
+  cursor: pointer;
+}
+
+.Welcome-Section .Light .Navigation ul li a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #555;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.Welcome-Section .Light .Navigation ul li a:hover {
+  border-bottom: 2px solid #fa145e;
+  padding-bottom: 1.5rem;
+}
+
+.Welcome-Section .Light .Navigation ul li .active {
+  border-bottom: 2px solid #fa145e;
+  padding-bottom: 1.5rem;
+  color: #fa145e;
+}
+
+.Welcome-Section .Light .Navigation div {
+  display: none;
+  height: 3px;
+  width: 30px;
+  margin: 0.6rem auto;
+  background-color: #555;
+}
+
+@media (max-width: 1060px) {
+  .Welcome-Section .Light .Navigation ul {
+    display: none;
+  }
+  .Welcome-Section .Light .Navigation div {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.Welcome-Section .Welcome {
+  height: 70vh;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5))), url("../media/gallery/6.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5)), url("../media/gallery/6.jpg");
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  z-index: 90;
+}
+
+.Welcome-Section .Welcome .socials {
+  position: absolute;
+  top: 50%;
+  left: 7%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  z-index: 200;
+}
+
+.Welcome-Section .Welcome .socials a {
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.Welcome-Section .Welcome .socials a i {
+  font-size: 2rem;
+  margin: 1rem;
+  color: #fff;
+}
+
+.Welcome-Section .Welcome .socials a:hover .tw {
+  color: #00acee;
+}
+
+.Welcome-Section .Welcome .socials a:hover .fb {
+  color: #4267b2;
+}
+
+.Welcome-Section .Welcome .socials a:hover .ins {
+  color: #fb0e65;
+}
+
+.Welcome-Section .Welcome .socials a:hover .lin {
+  color: #0e76a8;
+}
+
+.Welcome-Section .Welcome .text-box {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  max-width: 60%;
+  z-index: 99;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding-left: 2rem;
+}
+
+@media (max-width: 600px) {
+  .Welcome-Section .Welcome .text-box {
+    max-width: 80%;
+  }
+}
+
+.Welcome-Section .Welcome .text-box p {
+  font-size: 4rem;
+  color: #fff;
+}
+
+.Welcome-Section .Welcome .text-box button {
+  margin-top: 3rem;
+  width: 20rem;
+  height: auto;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  border: none;
+  background-image: -webkit-gradient(linear, left top, right top, from(#f23637), to(#fc0b68));
+  background-image: linear-gradient(to right, #f23637 0%, #fc0b68 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF23637', endColorstr='#FFFC0B68', GradientType=1);
+  background-repeat: no-repeat;
+  position: relative;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.Welcome-Section .Welcome .text-box button:hover {
+  background: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fa145e));
+  background: linear-gradient(#fa145e);
+}
+
+@media (max-width: 660px) {
+  .Welcome-Section .Welcome .text-box p {
+    font-size: 3rem;
+  }
+}
+
+.Welcome::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-box-shadow: inset 0px 120px 130px rgba(0, 0, 0, 0.816);
+          box-shadow: inset 0px 120px 130px rgba(0, 0, 0, 0.816);
+  content: " ";
+  height: 100%;
+  width: 100%;
+}
+
+.gmap-area {
+  background-image: url("../media/map.jpg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 70px 0;
+}
+
+.gmap-area .gmap iframe {
+  border-radius: 50%;
+  height: 280px;
+  width: 300px;
+}
+
+.gmap {
+  border: 10px solid #f6f5f0;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  -webkit-box-shadow: 0px 0px 3px 3px #e7e4dc;
+          box-shadow: 0px 0px 3px 3px #e7e4dc;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.gmap-area .map-content ul {
+  list-style: none;
+}
+
+.gmap-area .map-content address h5 {
+  font-weight: 700;
+  /* font-size: 16px; */
+}
+
+#contact-page {
+  padding-top: 0;
+}
+
+.lead {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+#contact-page .contact-form
+.form-group label {
+  color: #4E4E4E;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.form-group .form-control {
+  padding: 7px 12px;
+  border-color: #f2f2f2;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+textarea#message {
+  resize: none;
+  padding: 10px;
+}
+
+#contact-page .contact-wrap {
+  margin-top: 20px;
+}
+
+footer {
+  padding: 40px;
+  background-color: #333;
+  color: #e6e6e6;
+  font-size: 80%;
+}
+
+@media (max-width: 700px) {
+  footer #row-1 {
+    display: none;
+  }
+}
+
+.footer-nav {
+  text-decoration: none;
+  list-style: none;
+  float: left;
+}
+
+.social-icons {
+  list-style: none;
+  float: right;
+}
+
+.footer-nav li,
+.social-icons li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-icons li:last-child {
+  margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-icons li a:link,
+.social-icons li a:visited {
+  text-decoration: none;
+  border-bottom: 0;
+  color: #888;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+  font-size: 1.5rem;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active,
+.social-icons li a:hover,
+.social-icons li a:active {
+  text-decoration: none;
+  border-bottom: 0;
+  color: #ddd;
+}
+
+.social-icons li a:visited,
+.social-icons li a:link {
+  font-size: 150%;
+}
+
+.i {
+  font-size: 2rem;
+}
+
+.i:hover {
+  color: #ccc;
+}
+
+footer p {
+  margin-top: 2.4rem;
+  color: #888;
+  text-align: center;
+  font-size: 1.2rem;
+}
+/*# sourceMappingURL=contact-us.css.map */
